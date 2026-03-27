@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FareForward — Don't Let Your Ticket Go to Waste</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Fare<span>Forward</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/list-ticket.html">List a Ticket</a></li>
+            <li><a href="pages/login.html" class="btn btn-outline">Login</a></li>
+            <li><a href="pages/register.html" class="btn btn-primary">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>🎫 Don't Let Your Ticket Go to Waste</h1>
+        <p>Missed your train, flight, or bus? List it here and help someone else travel — while you recover your cost.</p>
+        <div class="hero-btns">
+            <a href="pages/list-ticket.html" class="btn btn-white btn-lg">List My Ticket</a>
+            <a href="#listings" class="btn btn-outline btn-lg" style="border-color:white; color:white;">Browse Tickets</a>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="search-section">
+        <div class="search-bar">
+            <select id="filterType">
+                <option value="">All Types</option>
+                <option value="train">🚆 Train</option>
+                <option value="flight">✈️ Flight</option>
+                <option value="bus">🚌 Bus</option>
+            </select>
+            <input type="text" id="filterFrom" placeholder="From (e.g. Delhi)">
+            <input type="text" id="filterTo" placeholder="To (e.g. Mumbai)">
+            <button class="btn btn-primary" onclick="filterTickets()">Search</button>
+        </div>
+    </div>
+
+    <!-- LISTINGS -->
+    <div class="section" id="listings">
+        <h2 class="section-title">Available Tickets</h2>
+        <p class="section-subtitle">Grab a last-minute seat at a great price</p>
+
+        <div class="tickets-grid" id="ticketsGrid">
+
+            <!-- Ticket Card 1 -->
+            <div class="ticket-card" data-type="train" data-from="delhi" data-to="mumbai">
+                <span class="ticket-type type-train">🚆 Train</span>
+                <div class="ticket-route">
+                    <span class="city">Delhi</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Mumbai</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 28 March 2026</span>
+                    <span>💺 Seat: B2 — 34 (Sleeper)</span>
+                    <span>👤 Listed by: Rahul S.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹850</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+            <!-- Ticket Card 2 -->
+            <div class="ticket-card" data-type="flight" data-from="bangalore" data-to="hyderabad">
+                <span class="ticket-type type-flight">✈️ Flight</span>
+                <div class="ticket-route">
+                    <span class="city">Bangalore</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Hyderabad</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 29 March 2026</span>
+                    <span>💺 Seat: 14A (Window)</span>
+                    <span>👤 Listed by: Priya M.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹3,200</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+            <!-- Ticket Card 3 -->
+            <div class="ticket-card" data-type="bus" data-from="pune" data-to="goa">
+                <span class="ticket-type type-bus">🚌 Bus</span>
+                <div class="ticket-route">
+                    <span class="city">Pune</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Goa</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 30 March 2026</span>
+                    <span>💺 Seat: 9 (AC Sleeper)</span>
+                    <span>👤 Listed by: Amit K.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹650</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+            <!-- Ticket Card 4 -->
+            <div class="ticket-card" data-type="train" data-from="chennai" data-to="kolkata">
+                <span class="ticket-type type-train">🚆 Train</span>
+                <div class="ticket-route">
+                    <span class="city">Chennai</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Kolkata</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 1 April 2026</span>
+                    <span>💺 Seat: A1 — 12 (AC 2 Tier)</span>
+                    <span>👤 Listed by: Sneha R.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹1,450</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+            <!-- Ticket Card 5 -->
+            <div class="ticket-card" data-type="flight" data-from="delhi" data-to="goa">
+                <span class="ticket-type type-flight">✈️ Flight</span>
+                <div class="ticket-route">
+                    <span class="city">Delhi</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Goa</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 2 April 2026</span>
+                    <span>💺 Seat: 22C (Aisle)</span>
+                    <span>👤 Listed by: Vikram P.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹4,100</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+            <!-- Ticket Card 6 -->
+            <div class="ticket-card" data-type="bus" data-from="mumbai" data-to="ahmedabad">
+                <span class="ticket-type type-bus">🚌 Bus</span>
+                <div class="ticket-route">
+                    <span class="city">Mumbai</span>
+                    <span class="arrow">→</span>
+                    <span class="city">Ahmedabad</span>
+                </div>
+                <div class="ticket-info">
+                    <span>📅 Date: 3 April 2026</span>
+                    <span>💺 Seat: 5 (Non-AC)</span>
+                    <span>👤 Listed by: Neha T.</span>
+                </div>
+                <div class="ticket-footer">
+                    <span class="ticket-price">₹400</span>
+                    <a href="pages/ticket-detail.html" class="btn btn-primary">View & Buy</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div style="background: white; padding: 3rem 2rem; text-align: center;">
+        <h2 class="section-title" style="text-align:center;">How It Works</h2>
+        <p class="section-subtitle" style="text-align:center;">Simple. Fast. Helpful.</p>
+        <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-top:2rem;">
+            <div style="max-width:200px;">
+                <div style="font-size:3rem;">📋</div>
+                <h3 style="margin:0.5rem 0;">List Your Ticket</h3>
+                <p style="color:var(--gray); font-size:0.9rem;">Missed your trip? Post your ticket in 2 minutes.</p>
+            </div>
+            <div style="max-width:200px;">
+                <div style="font-size:3rem;">🔍</div>
+                <h3 style="margin:0.5rem 0;">Buyer Finds It</h3>
+                <p style="color:var(--gray); font-size:0.9rem;">Travellers browse and find your listed ticket.</p>
+            </div>
+            <div style="max-width:200px;">
+                <div style="font-size:3rem;">💸</div>
+                <h3 style="margin:0.5rem 0;">Pay via UPI</h3>
+                <p style="color:var(--gray); font-size:0.9rem;">Instant payment directly to your UPI ID.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 <span>FareForward</span> — No seat goes to waste.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
