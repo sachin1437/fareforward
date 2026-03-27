@@ -17,3 +17,24 @@ function filterTickets() {
         card.style.display = (matchType && matchFrom && matchTo) ? 'block' : 'none';
     });
 }
+
+function handleRegister() {
+    const inputs = document.querySelectorAll('.form-group input');
+    let allFilled = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.borderColor = 'var(--danger)';
+            allFilled = false;
+        } else {
+            input.style.borderColor = 'var(--success)';
+        }
+    });
+
+    if (allFilled) {
+        alert('Registration successful! (Frontend demo — backend coming in Part 2)');
+        window.location.href = 'login.html';
+    } else {
+        alert('Please fill in all fields!');
+    }
+}
