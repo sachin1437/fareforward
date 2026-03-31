@@ -493,3 +493,34 @@ footer span { color: var(--primary); }
     .nav-links { gap: 1rem; }
     .detail-info-grid { grid-template-columns: 1fr; }
 }
+/* ===== ALERTS ===== */
+.alert {
+    padding: 0.9rem 1.2rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #86efac;
+}
+
+/* ===== NAVBAR BUTTON FIX ===== */
+.navbar .btn-primary {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.navbar .btn-outline {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
