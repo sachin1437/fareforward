@@ -14,7 +14,12 @@ function filterTickets() {
         const matchFrom = from === '' || cardFrom.includes(from);
         const matchTo = to === '' || cardTo.includes(to);
 
-        card.style.display = (matchType && matchFrom && matchTo) ? 'block' : 'none';
+        if (matchType && matchFrom && matchTo) {
+            card.style.display = '';
+            card.style.visibility = 'visible';
+        } else {
+            card.style.display = 'none';
+        }
     });
 }
 
@@ -37,4 +42,18 @@ function handleRegister() {
     } else {
         alert('Please fill in all fields!');
     }
+}
+
+function deleteTicket(id) {
+    if (confirm('Are you sure you want to remove this listing?')) {
+        alert('Ticket #' + id + ' removed! (Frontend demo — backend coming in Part 2)');
+    }
+}
+
+function copyUPI(upiId) {
+    navigator.clipboard.writeText(upiId).then(() => {
+        alert('UPI ID copied: ' + upiId);
+    }).catch(() => {
+        alert('UPI ID: ' + upiId + '\nPlease copy it manually.');
+    });
 }
