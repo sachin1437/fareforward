@@ -48,6 +48,8 @@ FareForward is a peer-to-peer ticket resale platform that helps people recover t
 - 🎵 Concert / Live Music
 - 🏏 Cricket Match
 - 🎭 Theatre / Play
+- ⚽ Football Match
+- 🎪 Comedy Show
 
 ---
 
