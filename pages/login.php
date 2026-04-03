@@ -1,52 +1,44 @@
 <?php
-$pageTitle = "Login — FareForward";
-$rootPath = "../";
-$cssPath = "../";
-$jsPath = "../";
+$pageTitle = 'Login - FareForward';
+$rootPath = '../';
 include '../includes/header.php';
 ?>
 
-<!-- LOGIN SECTION -->
-<div class="form-container">
-    <h2>Welcome Back</h2>
-    <p>Login to your FareForward account</p>
-
-    <?php if (!empty($error)) : ?>
-        <div class="alert alert-danger"><?php echo $error; ?></div>
-    <?php endif; ?>
-
-    <?php if (!empty($success)) : ?>
-        <div class="alert alert-success"><?php echo $success; ?></div>
-    <?php endif; ?>
-
-    <form action="login.php" method="POST">
-
-        <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="e.g. rahul@email.com"
-                   value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+<!-- Login Page -->
+<div class="auth-page" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920'); min-height: 100vh; padding-top: 80px; display: flex; align-items: center; justify-content: center;">
+    <div class="auth-overlay" style="position: fixed;"></div>
+    
+    <div class="auth-card glass-card" style="margin: 2rem 0; position: relative; z-index: 1;">
+        <div class="auth-header">
+            <h1 class="auth-title gradient-text">Welcome Back</h1>
+            <p class="auth-subtitle">Login to access your account and manage your tickets</p>
         </div>
-
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Enter your password">
+        
+        <form class="auth-form" data-validate>
+            <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                <label class="form-check">
+                    <input type="checkbox" class="form-check-input" name="remember">
+                    <span>Remember me</span>
+                </label>
+                <a href="#" style="color: var(--primary-purple); font-size: 0.875rem;">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+        </form>
+        
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="register.php">Register here</a></p>
         </div>
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem;">
-            <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; cursor:pointer;">
-                <input type="checkbox" name="remember"> Remember me
-            </label>
-            <a href="#" style="color:var(--primary); font-size:0.9rem;">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block btn-lg">
-            Login
-        </button>
-
-    </form>
-
-    <div class="form-link">
-        Don't have an account? <a href="register.php">Register here</a>
     </div>
 </div>
 
