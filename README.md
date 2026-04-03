@@ -2,17 +2,22 @@
 
 > **Don't let your ticket go to waste.**
 
-FareForward is a peer-to-peer travel ticket resale platform that helps travellers recover the cost of missed train, flight, and bus tickets — while giving other passengers a chance to grab last-minute seats at fair prices.
+FareForward is a peer-to-peer ticket resale platform that helps people recover the cost of missed or unused tickets — whether it's a train, flight, bus, movie, concert, cricket match, or any live event. Buyers get last-minute tickets at fair prices, sellers recover their money instantly via UPI.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Browse available train, flight, and bus tickets
-- 📋 List your missed ticket in minutes
-- 💸 Pay instantly via UPI
+- 🔍 Browse travel & entertainment tickets in one place
+- 🎬 Support for 8+ ticket types (Train, Flight, Bus, Ferry, Movie, Concert, Cricket, Theatre)
+- 📋 List your missed ticket in minutes with image upload
+- 💸 Instant UPI payment — no middleman, no commission
 - 🔐 Secure user login and registration
 - 📊 Personal dashboard to manage your listings
+- ⭐ Reviews and ratings for sellers
+- 📞 Contact seller directly from ticket detail page
+- 📅 Date validation — no past dates allowed
+- 📱 Fully responsive — works on mobile, tablet & desktop
 
 ---
 
@@ -24,27 +29,25 @@ FareForward is a peer-to-peer travel ticket resale platform that helps traveller
 | Backend | PHP |
 | Database | MySQL |
 | Server | XAMPP (Apache) |
+| UI Style | Glass Morphism, Gradient, Responsive Grid |
+| Fonts | Inter + Poppins (Google Fonts) |
+| Icons | Font Awesome 6 |
 
 ---
 
-## 📁 Project Structure
-```
-fareforward/
-├── index.php               ← Homepage
-├── includes/
-│   ├── header.php          ← Shared navbar
-│   └── footer.php          ← Shared footer
-├── pages/
-│   ├── register.php        ← User registration
-│   ├── login.php           ← User login
-│   ├── dashboard.php       ← User dashboard
-│   ├── list-ticket.php     ← List a ticket
-│   └── ticket-detail.php  ← Ticket detail & UPI pay
-├── css/
-│   └── style.css           ← Global styles
-└── js/
-    └── main.js             ← Frontend scripts
-```
+## 🎟️ Supported Ticket Types
+
+### ✈️ Travel
+- 🚆 Train
+- ✈️ Flight
+- 🚌 Bus
+- ⛴️ Ferry
+
+### 🎭 Entertainment
+- 🎬 Movie
+- 🎵 Concert / Live Music
+- 🏏 Cricket Match
+- 🎭 Theatre / Play
 
 ---
 
@@ -53,8 +56,8 @@ fareforward/
 **Database name:** `ticket_resale`
 
 **Tables:**
-- `users` — stores registered user info
-- `tickets` — stores listed ticket details
+- `users` — stores registered user info (name, email, phone, password)
+- `tickets` — stores listed ticket details (type, route, date, price, UPI ID, status)
 
 ---
 
@@ -65,20 +68,40 @@ fareforward/
 ```bash
    git clone https://github.com/sachin1437/fareforward.git
 ```
-3. Start **Apache** and **MySQL** in XAMPP
-4. Open `http://localhost/phpmyadmin` and create database `ticket_resale`
-5. Import the SQL from the `/database/` folder
-6. Open `http://localhost/fareforward/index.php`
+3. Start **Apache** and **MySQL** in XAMPP Control Panel
+4. Open `http://localhost/phpmyadmin`
+5. Create database named `ticket_resale`
+6. Run the SQL queries to create `users` and `tickets` tables
+7. Open `http://localhost/fareforward/index.php`
 
 ---
 
 ## 📌 Project Status
 
-- [x] Part 1 — Frontend (HTML + CSS + JS + PHP structure)
+- [x] Part 1 — Frontend (PHP structure + HTML + CSS + JS)
+  - [x] Homepage with ticket listings & filters
+  - [x] Register & Login pages
+  - [x] Dashboard with stats
+  - [x] Multi-step List Ticket form
+  - [x] Ticket Detail with UPI payment UI
+  - [x] About & Contact pages
+  - [x] Fully responsive design
 - [ ] Part 2 — Backend (PHP logic + MySQL integration)
+  - [ ] User authentication (register/login/logout)
+  - [ ] Ticket CRUD operations
+  - [ ] Session management
+  - [ ] Database connectivity
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 Developers
 
 **Sachin Gupta** — [@sachin1437](https://github.com/sachin1437)
+🧙 Full Stack Sorcerer & Chief Ticket Whisperer
+
+**Aditya Kumar**
+⚔️ Bug Slayer General & CSS Destroyer
+
+---
+
+*Made with ❤️ in India — No seat goes to waste!* 🇮🇳
