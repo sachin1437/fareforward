@@ -101,9 +101,6 @@ FareForward is a peer-to-peer ticket resale platform that helps people recover t
 **Sachin Gupta** — [@sachin1437](https://github.com/sachin1437)
 🧙 Full Stack Sorcerer & Chief Ticket Whisperer
 
-**Aditya Kumar**
-⚔️ Bug Slayer General & CSS Destroyer
-
 ---
 
 *Made with ❤️ in India — No seat goes to waste!* 🇮🇳
