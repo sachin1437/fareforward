@@ -8,16 +8,24 @@ $today = date('Y-m-d');
 include '../includes/header.php';
 ?>
 
-<section class="section" style="margin-top: 70px;">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Sell Your Ticket</span>
-            <h2 class="section-title gradient-text">List Your Ticket for Sale</h2>
-            <p class="section-subtitle">Fill in the details below to list your ticket in under 2 minutes</p>
-        </div>
+<!-- Main Container with Background Image -->
+<div style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh;">
+    <div style="background: rgba(0, 0, 0, 0.5); min-height: 100vh; padding-bottom: 3rem;">
 
+<!-- Hero Section -->
+<section style="position: relative; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+    <div style="position: relative; z-index: 1; text-align: center; padding: 4rem 1.5rem;">
+        <span style="display: inline-block; padding: 0.375rem 1rem; background: rgba(255, 255, 255, 0.2); color: white; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 9999px; margin-bottom: 1rem;">Sell Your Ticket</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: white; margin-bottom: 1rem;">List Your Ticket for Sale</h1>
+        <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto;">Fill in the details below to list your ticket in under 2 minutes</p>
+    </div>
+</section>
+
+<!-- Form Section -->
+<section class="section" style="padding-top: 0;">
+    <div class="container">
         <!-- Step Indicator -->
-        <div class="step-indicator">
+        <div class="step-indicator" style="margin-bottom: 2rem;">
             <div class="step-dot active">
                 <div class="step-number-indicator">1</div>
                 <span class="step-label">Category</span>
@@ -33,7 +41,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Multi-step Form -->
-        <form class="multi-step-form glass-card" style="padding: 2rem;" data-validate>
+        <form class="multi-step-form" style="padding: 2rem; background: white; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);" data-validate>
             
             <!-- Step 1: Category Selection -->
             <div class="form-step" data-step="1">
@@ -134,44 +142,47 @@ include '../includes/header.php';
                     <div class="info-box-text">Buyers will pay directly to your UPI ID. Make sure to enter a valid UPI ID (Google Pay, PhonePe, Paytm, etc.)</div>
                 </div>
 
+                <!-- Hidden input to store selected category -->
+                <input type="hidden" id="selected_category" name="selected_category" value="">
+
                 <!-- All Ticket Fields -->
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
                     <!-- Row 1: Date and Time -->
                     <div class="form-group">
-                        <label class="form-label" for="ticket_date">Travel / Event Date *</label>
+                        <label class="form-label" for="ticket_date" data-label-travel="Travel Date *" data-label-entertainment="Event Date *">Travel / Event Date *</label>
                         <input type="date" id="ticket_date" name="ticket_date" class="form-input" min="<?php echo date('Y-m-d'); ?>" placeholder="Select date" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="ticket_time">Departure / Event Time *</label>
+                        <label class="form-label" for="ticket_time" data-label-travel="Departure Time *" data-label-entertainment="Event Time *">Departure / Event Time *</label>
                         <input type="time" id="ticket_time" name="ticket_time" class="form-input" required>
                     </div>
 
                     <!-- Row 2: From City / Event Name -->
                     <div class="form-group">
-                        <label class="form-label" for="from_city">From City / Event Name *</label>
-                        <input type="text" id="from_city" name="from_city" class="form-input" placeholder="e.g. Delhi / Coldplay Concert" required>
+                        <label class="form-label" for="from_city" data-label-travel="From City *" data-label-entertainment="Event Name *">From City / Event Name *</label>
+                        <input type="text" id="from_city" name="from_city" class="form-input" data-placeholder-travel="e.g. Delhi" data-placeholder-entertainment="e.g. Coldplay Concert" placeholder="e.g. Delhi / Coldplay Concert" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="to_city">To City / Venue *</label>
-                        <input type="text" id="to_city" name="to_city" class="form-input" placeholder="e.g. Mumbai / DY Patil Stadium" required>
+                        <label class="form-label" for="to_city" data-label-travel="To City *" data-label-entertainment="Venue *">To City / Venue *</label>
+                        <input type="text" id="to_city" name="to_city" class="form-input" data-placeholder-travel="e.g. Mumbai" data-placeholder-entertainment="e.g. DY Patil Stadium" placeholder="e.g. Mumbai / DY Patil Stadium" required>
                     </div>
 
                     <!-- Row 3: Seat Info and Number -->
                     <div class="form-group">
-                        <label class="form-label" for="seat_info">Seat / Section / Berth Info *</label>
-                        <input type="text" id="seat_info" name="seat_info" class="form-input" placeholder="e.g. B3-45 / Block A Row 5 / 12A Window" required>
+                        <label class="form-label" for="seat_info" data-label-travel="Seat / Berth Info *" data-label-entertainment="Section / Row / Seat *">Seat / Section / Berth Info *</label>
+                        <input type="text" id="seat_info" name="seat_info" class="form-input" data-placeholder-travel="e.g. B3-45 / 12A Window" data-placeholder-entertainment="e.g. Block A, Row 5, Seat 23" placeholder="e.g. B3-45 / Block A Row 5 / 12A Window" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="train_number">Train / Flight / Bus / Event Number</label>
-                        <input type="text" id="train_number" name="train_number" class="form-input" placeholder="e.g. 12301 / 6E-234 / IPL-2026">
+                        <label class="form-label" for="train_number" data-label-travel="Train / Flight / Bus Number" data-label-entertainment="Event Number / Code">Train / Flight / Bus / Event Number</label>
+                        <input type="text" id="train_number" name="train_number" class="form-input" data-placeholder-travel="e.g. 12301 / 6E-234" data-placeholder-entertainment="e.g. IPL-2026 / CONCERT-001" placeholder="e.g. 12301 / 6E-234 / IPL-2026">
                     </div>
 
-                    <!-- Row 4: Number of Tickets and Price -->
-                    <div class="form-group">
+                    <!-- Row 4: Number of Tickets (entertainment only) and Price -->
+                    <div class="form-group" id="num_tickets_group">
                         <label class="form-label" for="num_tickets">Number of Tickets *</label>
                         <input type="number" id="num_tickets" name="num_tickets" class="form-input" min="1" max="10" value="1" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="price_group">
                         <label class="form-label" for="price">Price in ₹ *</label>
                         <input type="number" id="price" name="price" class="form-input" placeholder="Enter selling price" min="1" required>
                     </div>
@@ -209,5 +220,8 @@ include '../includes/header.php';
         </form>
     </div>
 </section>
+
+    </div>
+</div>
 
 <?php include '../includes/footer.php'; ?>

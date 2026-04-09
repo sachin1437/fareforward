@@ -651,8 +651,50 @@ function initMultiStepForm() {
             }
         });
 
+        // If showing Step 3, update labels based on selected category
+        if (step === 2) {
+            updateStep3Labels();
+        }
+
         // Scroll to top of form
         form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Update Step 3 labels based on selected category
+    function updateStep3Labels() {
+        const selectedCategoryCard = form.querySelector('.category-card.selected');
+        if (!selectedCategoryCard) return;
+
+        const category = selectedCategoryCard.dataset.category;
+        const hiddenInput = document.getElementById('selected_category');
+        if (hiddenInput) {
+            hiddenInput.value = category;
+        }
+
+        // Update labels
+        document.querySelectorAll('[data-label-travel][data-label-entertainment]').forEach(label => {
+            label.textContent = category === 'travel' ? label.dataset.labelTravel : label.dataset.labelEntertainment;
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-placeholder-travel][data-placeholder-entertainment]').forEach(input => {
+            input.placeholder = category === 'travel' ? input.dataset.placeholderTravel : input.dataset.placeholderEntertainment;
+        });
+
+        // Show/hide Number of Tickets field
+        const numTicketsGroup = document.getElementById('num_tickets_group');
+        const priceGroup = document.getElementById('price_group');
+        if (numTicketsGroup && priceGroup) {
+            if (category === 'travel') {
+                // Hide number of tickets for travel, make price full width
+                numTicketsGroup.style.display = 'none';
+                priceGroup.style.gridColumn = '1 / -1';
+            } else {
+                // Show number of tickets for entertainment
+                numTicketsGroup.style.display = 'block';
+                priceGroup.style.gridColumn = 'auto';
+            }
+        }
     }
 
     function validateStep(step) {
