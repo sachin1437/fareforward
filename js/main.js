@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initToastSystem();
 });
 
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    }
+});
+
 // ========================================
 // Navbar Scroll Effect
 // ========================================
@@ -29,18 +40,12 @@ function initNavbar() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
-    let lastScroll = 0;
-
     window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.classList.remove('navbar-scrolled');
         }
-
-        lastScroll = currentScroll;
     });
 }
 

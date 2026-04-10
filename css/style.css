@@ -412,15 +412,16 @@ ul, ol {
     right: 0;
     z-index: 1000;
     padding: 1rem 0;
-    transition: all var(--transition-base);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    background: transparent;
+    box-shadow: none;
 }
 
-.navbar.scrolled {
-    box-shadow: var(--shadow-lg);
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
 .navbar-container {
@@ -442,14 +443,24 @@ ul, ol {
 }
 
 .logo-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
 }
 
 .logo-icon {
+    color: #fbbf24;
     font-size: 1.75rem;
+}
+
+.navbar-scrolled .logo-text {
+    color: var(--primary) !important;
+    -webkit-text-fill-color: unset !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+.navbar-scrolled .logo-icon {
+    color: var(--primary-amber);
 }
 
 .nav-links {
@@ -459,9 +470,10 @@ ul, ol {
 }
 
 .nav-link {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .nav-link::after {
@@ -472,17 +484,58 @@ ul, ol {
     width: 0;
     height: 2px;
     background: var(--gradient-primary);
-    transition: width var(--transition-base);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
 
+.navbar-scrolled .nav-link {
+    color: var(--text-medium) !important;
+}
+
+.navbar-scrolled .nav-link:hover {
+    color: var(--primary) !important;
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* Login button transparent navbar */
+.navbar .btn-outline {
+    border-color: rgba(255,255,255,0.8) !important;
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+.navbar .btn-outline:hover {
+    background: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+}
+
+/* Login button scrolled navbar */
+.navbar-scrolled .btn-outline {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    background: transparent !important;
+}
+
+.navbar-scrolled .btn-outline:hover {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn span {
+    background: #ffffff;
+}
+
+.navbar-scrolled .mobile-menu-btn span {
+    background: var(--text-dark);
 }
 
 /* Mobile Menu */
@@ -500,7 +553,7 @@ ul, ol {
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
+    background: #ffffff;
     border-radius: 3px;
     transition: all var(--transition-base);
 }
