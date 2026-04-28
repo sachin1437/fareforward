@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'FareForward - Buy & Sell Tickets';
 $rootPath = './';
-
+$bodyClass = 'page-with-hero';
 // Get today's date for min attribute
 $today = date('Y-m-d');
 

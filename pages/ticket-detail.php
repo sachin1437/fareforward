@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Ticket Details - FareForward';
 $rootPath = '../';
+$bodyClass = 'page-with-hero';
 include '../includes/header.php';
 
 // Get ticket ID from URL

@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'List Ticket - FareForward';
 $rootPath = '../';
-
+$bodyClass = 'page-with-hero';
 // Get today's date for min attribute
 $today = date('Y-m-d');
 

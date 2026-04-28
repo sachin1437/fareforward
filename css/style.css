@@ -1889,3 +1889,50 @@ ul, ol {
         padding: 2rem 0;
     }
 }
+
+/* ===== PAGES WITHOUT HERO FIX ===== */
+.page-no-hero .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.page-no-hero .logo-text {
+    color: var(--primary-purple) !important;
+    -webkit-text-fill-color: var(--primary-purple) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+.page-no-hero .logo-icon {
+    color: var(--primary-amber) !important;
+}
+
+.page-no-hero .nav-link {
+    color: var(--text-medium) !important;
+}
+
+.page-no-hero .nav-link:hover {
+    color: var(--primary-purple) !important;
+}
+
+.page-no-hero .btn-outline {
+    border-color: var(--primary-purple) !important;
+    color: var(--primary-purple) !important;
+    background: transparent !important;
+}
+
+.page-no-hero .btn-outline:hover {
+    background: var(--primary-purple) !important;
+    color: #ffffff !important;
+}
+
+.page-no-hero .mobile-menu-btn span {
+    background: var(--text-dark) !important;
+}
+
+.page-no-hero .navbar-scrolled .logo-text {
+    color: var(--primary-purple) !important;
+}

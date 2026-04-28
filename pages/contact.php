@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Contact Us - FareForward';
 $rootPath = '../';
+$bodyClass = 'page-with-hero';
 include '../includes/header.php';
 ?>
 
